@@ -9,36 +9,38 @@ function Redirect() {
      }
 
 const logIn = (userData) => {
+    let errorMsg;
     axios
         .post(`${baseUrl}/user/login`, userData)
         .then(function (response) {
             setTimeout(function() {
                 Redirect();
-                 }, 1000);
-
-            // Swal.fire({
-            //     toast: true,
-            //     icon: "success",
-            //     title: "Login successful. You will be redirected to the main page in 3 seconds.",
-            //     animation: false,
-            //     position: "center",
-            //     showConfirmButton: false,
-            //     timer: 3000,
-            //     timerProgressBar: true,
-            //     didOpen: (toast) => {
-            //         toast.addEventListener("mouseenter", Swal.stopTimer);
-            //         toast.addEventListener("mouseleave", Swal.resumeTimer);
-            //     },
-            // });
-           
-           
+                 }, 1000);   
         })
-        .catch((err) => {
-            console.log(err);
+        .catch(function (error) {
+                if (error.response) {
+                  // The request was made and the server responded with a status code
+                  // that falls out of the range of 2xx
+                  console.log(error.response.data);
+                  console.log(error.response.status);
+                  console.log(error.response.headers);
+                  errorMsg = error.response.data.message
+                } else if (error.request) {
+                  // The request was made but no response was received
+                  // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                  // http.ClientRequest in node.js
+                  console.log(error.request);
+                  errorMsg = "Network Error"
+                } else {
+                  // Something happened in setting up the request that triggered an Error
+                  console.log('Error', error.message);
+                  errorMsg = error.message
+                }
+               
             Swal.fire({
                 icon: "error",
                 title: "Error Processing Input",
-                text:  err.message || err.response.data.message 
+                text:  errorMsg
             });
         });
 };
