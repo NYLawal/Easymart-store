@@ -58,3 +58,8 @@ login.addEventListener("click", (e) => {
         logIn(formData);    
 });
 
+const forgotPass = document.getElementById("forgot-password");
+forgotPass.addEventListener("click", (e) => {
+    // e.preventDefault
+    window.location.href = "https://easymart-store.netlify.app/forgot-passwd.html"
+})

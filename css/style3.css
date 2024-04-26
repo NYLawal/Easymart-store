@@ -41,13 +41,18 @@ input{
     width: 100px;
 }
 
-.create{
+.create, .reset-passwd, .forgot-passwd{
     align-items: center;
     width: 100%;
     height: 30px;
     background-color: orange;
     border: none;
     color: black;
+}
+.reset-passwd, .forgot-passwd{
+    width: 50%;
+    display: block;
+    margin: 5px auto;
 }
 .create a{
     text-decoration: none;
@@ -59,3 +64,11 @@ h3,h4{
     text-align: center;
     margin: 10px;
 }
+
+.forgot-pswd-header{
+    font-weight: 400;
+}
+
+/* .password{
+    display:none;
+} */
