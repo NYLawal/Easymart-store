@@ -38,7 +38,7 @@ const logIn = (userData) => {
             Swal.fire({
                 icon: "error",
                 title: "Error Processing Input",
-                text: err.response.data.message ? err.response.data.message: err.message
+                text: err.response.data.message || err.message
             });
         });
 };
