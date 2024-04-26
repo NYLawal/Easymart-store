@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link> 
+    <link rel="stylesheet" href="css/style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cap">
+        <img  src="images/easymart.png" alt="logo">
+        <div></div>
+    </div>
+    <div>
+        <h3>CREATE AN ACCOUNT</h3>
+    </div>
+    <!-- <div class="format"> -->
+        <form action="" id="form" class="signup-form" >
+            
+            <div>
+                <label for="fullname">Full Name</label><br>
+            <input id="fullname" class="rest" type="text" value="" placeholder="Enter your fullname" required autocomplete="off"> <br><br>
+            <span id="Name_error"></span>
+            </div>
+            <label for="email">Email Address</label><br> 
+            <input id="email" class="email" type="Email" value="" placeholder="Enter a valid email" required autocomplete="off"> <br><br>
+            <label  for="phone">Phone Number</label><br>
+            <input id="phone" type="tel" value="" placeholder="Enter your phone number" required autocomplete="off"> <br><br>
+            <label for="passwd">Password</label><br>
+            <input id="passwd" type="password" value="" placeholder="Enter your password" required><br><br>
+            <button  id="create" class="create"><a href="">CREATE ACCOUNT</a></button>
+            <h4> Already Have An Account? <a href="login.html">LOGIN</a></h4>
+           
+        </form>
+    <!-- </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="scripts/signup.js"></script>
+    
+</body>
+</html>

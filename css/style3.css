@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+    
+
+form {
+    background-color: rgb(245, 245, 245);
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 30px;
+  }
+
+/* .email{
+    background-image: url('capstone-images/carbon_email\ \(1\).svg');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: 5% ;    
+}  */
+
+.rest{
+    align-items: center;
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+}
+
+.cap{
+    width: 70px;
+    float: right;
+    margin-right: 70px;    
+}
+
+.cap img{
+    align-items: flex-end;
+    width: 100px;
+}
+
+.create{
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    background-color: orange;
+    border: none;
+    color: black;
+}
+.create a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+h3,h4{
+    text-align: center;
+    margin: 10px;
+}

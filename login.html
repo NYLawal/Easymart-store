@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link> 
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="formbag">
+            <h1>Welcome back!</h1>
+              <p>Login to access your data </p><br><br>
+        
+            <form action="">
+                <label for="email">Email Address</label><br>
+                <input class="email" id="email" type="email" value="" placeholder="Enter your email address" autocomplete="off"><br>
+                <label for="passwd">Password</label><br>
+                <div class="pass">
+                    <input type="password" id="passwd" placeholder="Enter your password">
+                    <img src="icons/eye-disable.svg" alt="">
+                </div>
+                <br>                
+                
+          
+               <button class="login" id="login-btn" type="button">
+                <a href="home-page.html">Log In</a>
+               </button>
+
+                <p class="hr-lines"><span>Continue with</span></p> 
+                <br>
+               
+                <button class="goog">
+                   <span class="text">Login with Google</span>
+                   <img src="icons/google.svg" alt="">
+                </button>
+                <br>
+                <button class="facebook">
+                    <span class="text">Login with Facebook</span>
+                    <img src="icons/facebook.svg" alt="">
+                </button>
+                <br>
+                <p class="account">
+                    Don't have account? 
+                    <a class="register" href="signup.html">Register</a> 
+                </p>
+            </form>
+        </div>
+        <div class="cape"><img src="images/Rectangle 24.png" alt=""></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="scripts/login.js"></script>
+</body>
+</html>
