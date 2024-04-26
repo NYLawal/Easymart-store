@@ -1,5 +1,5 @@
 const baseUrl = "https://easymart-gap9.onrender.com/api/v1"
-// const redirectUrl = "https://Easymart-store.netlify.app/login.html"
+
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("passwd");
 
@@ -14,22 +14,22 @@ const logIn = (userData) => {
         .then(function (response) {
             setTimeout(function() {
                 Redirect();
-                 }, 4000);
+                 }, 1000);
 
-            Swal.fire({
-                toast: true,
-                icon: "success",
-                title: "Login successful. You will be redirected to the main page in 3 seconds.",
-                animation: false,
-                position: "center",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer);
-                    toast.addEventListener("mouseleave", Swal.resumeTimer);
-                },
-            });
+            // Swal.fire({
+            //     toast: true,
+            //     icon: "success",
+            //     title: "Login successful. You will be redirected to the main page in 3 seconds.",
+            //     animation: false,
+            //     position: "center",
+            //     showConfirmButton: false,
+            //     timer: 3000,
+            //     timerProgressBar: true,
+            //     didOpen: (toast) => {
+            //         toast.addEventListener("mouseenter", Swal.stopTimer);
+            //         toast.addEventListener("mouseleave", Swal.resumeTimer);
+            //     },
+            // });
            
            
         })
@@ -38,7 +38,7 @@ const logIn = (userData) => {
             Swal.fire({
                 icon: "error",
                 title: "Error Processing Input",
-                text: err.response.data.message || err.message
+                text:  err.message || err.response.data.message 
             });
         });
 };
@@ -46,9 +46,9 @@ const logIn = (userData) => {
 const login = document.getElementById("login-btn");
 login.addEventListener("click", (e) => {
     e.preventDefault()
+
     const email = emailInput.value;
     const password = passwordInput.value;
-    console.log(password)
         const formData = {
             email,
             password,

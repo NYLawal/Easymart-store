@@ -131,12 +131,14 @@ a{
     height: 50px;
     background-color: orange;
     border-radius: 5px; 
-    color: #fff;
+    color: #080808;
     border: 0;
     padding: 10px;
     font-size: 16px;
 }
-
+.login:active{
+    background-color: rgb(233, 159, 21);
+}
 
 h3{
     text-align: right;
