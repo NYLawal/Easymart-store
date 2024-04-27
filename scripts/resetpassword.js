@@ -20,7 +20,7 @@ const resetPassword = (userData) => {
             Swal.fire({
                 icon: "success",
                 title: "Successfully Reset",
-                text: response.message,
+                text: response.data,
             });
         })
         .catch((err) => {
