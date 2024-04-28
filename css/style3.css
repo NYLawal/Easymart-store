@@ -60,9 +60,14 @@ input{
     text-align: center;
 }
 
-h3,h4{
+h2,h3,h4{
     text-align: center;
     margin: 10px;
+}
+
+.forgot-pswd-header1{
+    font-weight: 500;
+    font-size: 2em;
 }
 
 .forgot-pswd-header{

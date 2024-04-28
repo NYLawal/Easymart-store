@@ -1,6 +1,5 @@
-
 // const baseUrl = "http://localhost:3000/Tech4Dev/Easymart-store/login.html"
-const baseUrl = "https://easymart-gap9.onrender.com/api/v1"
+const baseUrl = "https://easymart-gap9.onrender.com/api/v1";
 
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("passwd");
@@ -11,54 +10,74 @@ const collection = document.getElementsByClassName("password");
 // const emailLogin = document.getElementById("user");
 // const passwdLogin = document.getElementById("pass");
 
-
-const resetPassword = (userData) => {
-    axios
-        .post(`${baseUrl}/user/password-reset/:userId/:token`, userData)
-        .then(function (response) {
-            console.log(response);
-            Swal.fire({
-                icon: "success",
-                title: "Successfully Reset",
-                text: response.data,
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-            Swal.fire({
-                icon: "error",
-                title: "Error Processing Input",
-                text: err.response.data.message,
-            });
-        });
+const resetPassword = (userData, userId, token) => {
+  axios
+    .post(`${baseUrl}/user/password-reset/${userId}/${token}`, userData)
+    .then(function (response) {
+      console.log(response);
+      Swal.fire({
+        icon: "success",
+        title: "Successfully Reset",
+        text: response.data,
+      });
+    })
+    .catch(function (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+        errorMsg = !error.response.data.message  ? error.response.data : error.response.data.message ;
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(error.request);
+        errorMsg = "Network Error";
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log("Error", error.message);
+        errorMsg = error.message;
+      }
+      Swal.fire({
+        icon: "error",
+        title: "Error Processing Input",
+        text: errorMsg,
+      });
+    });
 };
 
 const resetpassword = document.getElementById("reset-passwd");
 resetpassword.addEventListener("click", (e) => {
-    e.preventDefault()
-    const email = emailInput.value;
-    const password = passwordInput.value;
-    const passwordRepeat = passwordRepeatInput.value;
+  e.preventDefault();
+  const email = emailInput.value;
+  const password = passwordInput.value;
+  const passwordRepeat = passwordRepeatInput.value;
 
-    if (password !== passwordRepeat) {
-        Swal.fire({
-            title: "Password Error",
-            text: "Passwords do not match!",
-            icon: "error",
-        });
-    } else {
-        const formData = {
-            email,
-            password
-        }
-        resetPassword(formData);
-    }
- 
+  if (password !== passwordRepeat) {
+    Swal.fire({
+      title: "Password Error",
+      text: "Passwords do not match!",
+      icon: "error",
+    });
+  } else {
+    const formData = {
+    //   email,
+      password,
+    };
+    var queryDict = {};
+    location.search
+      .substring(1)
+      .split("&")
+      .forEach(function (item) {
+        queryDict[item.split("=")[0]] = item.split("=")[1];
+      });
+    const userId = queryDict.userId;
+    const token = queryDict.token;
+    resetPassword(formData, userId, token);
+  }
 });
-
-
-
-
 
 // togglePassword.addEventListener("click", function () {
 //     if (passwordInput.type === "password") {
