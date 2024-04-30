@@ -81,13 +81,14 @@
 
 .product-display{
     background-color: rgb(225, 235, 244);
-    height: 310px;
+    height: 350px;
     padding: 10px;
     box-shadow: 0px 0px 6px 4px rgb(171, 181, 190);
 }
 
-.product-display img{
+.product-display .product-img{
     width: 250px;
+    height: 250px;
     border-radius: 10px;
 }
 
@@ -100,6 +101,7 @@
 .product-price{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 10px;
 }
 
 .product-price img{
@@ -111,12 +113,12 @@
     justify-content: space-around;
 }
 
-#decrease-button, #increase-button{
+.decrease-button, .increase-button{
     background: transparent;
     border: 1px solid rgb(117, 179, 179);
 }
 
-#itemNumber{
+.item-number{
     background-color: rgb(225, 235, 244);
     width: 30px;
     border: none;

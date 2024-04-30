@@ -132,6 +132,12 @@ nav{
     justify-content: space-around;
 }
 
+.range-div-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
 .range-div{
     display: flex;
     flex-direction: column;
@@ -145,6 +151,7 @@ nav{
 
 .range-img{
     height: 400px;
+    max-width: 400px;
 }
 
 .range-div span{

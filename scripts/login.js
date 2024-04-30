@@ -1,3 +1,4 @@
+// const baseUrl = "http://localhost:3000/api/v1"
 const baseUrl = "https://easymart-gap9.onrender.com/api/v1"
 
 const emailInput = document.getElementById("email");

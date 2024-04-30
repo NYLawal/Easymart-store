@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EASYMART</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,16 +19,16 @@
       <div class="homes">
         <li><a href="home-page.html">Home</a></li>
         <li><a href="selling-page.html">Offer</a></li>
-        <li>
-          <select name="" id="">
+        <li id="categoryOptionsList">
+          <select name="" id="categoryOptions">
             <a href=""> <option value="">Categories</option></a>
-            <option>Earrings</option>
-            <option value="">Bracelet</option>
-            <option value="">Rings</option>
-            <option value="">Necklace</option>
-            <option value="">Wrist Watch</option>
-            <option value="">Gemstone</option>
-            <option value="">Hairpins</option>
+            <option value="earring" class="earring">Earrings</option>
+            <option value="bracelet" class="bracelet">Bracelet</option>
+            <option value="ring" class="ring">Rings</option>
+            <option value="necklace" class="necklace">Necklace</option>
+            <option value="wristwatch" class="wristwatch">Wrist Watch</option>
+            <option value="gemstone" class="gemstone">Gemstone</option>
+            <option value="hairpin" class="hairpin">Hairpins</option>
           </select>
         </li>
         <li><a href="">About Us</a></li>
@@ -38,22 +39,20 @@
       </div>
     </header>
     <header class="lance">
-      <div class="list">
-        <li><a href="">Earrings</a></li>
+      <div class="list" id="categoryNav">
+        <li class="earring">Earrings</li>
         <br />
-        <li><a href="">Bracelet</a></li>
+        <li class="bracelet"><a href="">Bracelet</a></li>
         <br />
-        <li><a href="">Rings</a></li>
+        <li class="ring"><a href="">Rings</a></li>
+        <br/>
+        <li class="necklace"><a href="">Necklace</a></li>
         <br />
-        <li><a href="">Necklance</a></li>
+        <li class="wristwatch"><a href="">Wrist Watch</a></li>
         <br />
-        <li><a href="">Necklace</a></li>
+        <li class="gemstone"><a href="">Gemstone</a></li>
         <br />
-        <li><a href="">Wrist Watch</a></li>
-        <br />
-        <li><a href="">Gemstone</a></li>
-        <br />
-        <li><a href="">Hairpins</a></li>
+        <li class="hairpin"><a href="">Hairpins</a></li>
         <br />
       </div>
       <div class="image">
@@ -64,24 +63,22 @@
       </div>
     </header>
     <main>
-      <div class="daily">
+      <div class="daily" id="categorySidebar">
         <nav>
           <input type="text" value="Categories" />
-          <li><a href="">Earrings</a></li>
+          <li class="earring">Earrings</li>
           <br />
-          <li><a href="">Bracelet</a></li>
+          <li class="bracelet">Bracelet</li>
           <br />
-          <li><a href="">Rings</a></li>
+          <li class="ring">Rings</li>
           <br />
-          <li><a href="">Necklance</a></li>
+          <li class="necklace">Necklace</li>
           <br />
-          <li><a href="">Necklace</a></li>
+          <li class="wristwatch">Wrist Watch</li>
           <br />
-          <li><a href="">Wrist Watch</a></li>
+          <li class="gemstone">Gemstone</li>
           <br />
-          <li><a href="">Gemstone</a></li>
-          <br />
-          <li><a href="">Hairpins</a></li>
+          <li class="hairpin">Hairpins</li>
           <br />
         </nav>
       </div>
@@ -104,7 +101,8 @@
         </div>
       </div>
     </main>
-  
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>
